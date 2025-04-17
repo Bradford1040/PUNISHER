@@ -1,6 +1,36 @@
 .env
 secrets.conf
 .vscode
+
+# Node.js dependencies
+node_modules/
+
+# Python virtual environments
+venv/
+__pycache__/
+
+# Logs and temporary files
+*.log
+*.tmp
+*.swp
+*.bak
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# IDE-specific files
+.idea/
+*.iml
+
+# Build artifacts
+dist/
+build/
+*.out
+*.o
+
+# Git-specific files
+*.orig
 *.swp
 .tmp
 printer-[0-9]*_[0-9]*.cfg
