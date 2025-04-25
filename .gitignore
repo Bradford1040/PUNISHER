@@ -1,6 +1,28 @@
 .env
 secrets.conf
 .vscode
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# IDE-specific files
+.idea/
+*.iml
+
+# Build artifacts
+dist/
+build/
+*.out
+*.o
+*.bak
+*.old
+*.test
+
+
+
+# Git-specific files
+*.orig
 *.swp
 .tmp
 printer-[0-9]*_[0-9]*.cfg
