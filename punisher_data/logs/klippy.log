@@ -3969,3 +3969,25 @@ Fast-forward
 
 Skipping symbolic link: punisher_data/config/KAMP
 
+Skipping symbolic link: punisher_data/logs/mainsail-access.log
+Skipping symbolic link: punisher_data/logs/mainsail-error.log
+
+[devel-punisher 67fe55a] macros.cfg moonraker.conf
+ 11 files changed, 154450 insertions(+), 2 deletions(-)
+ create mode 100644 punisher_data/logs/klippy.log
+ create mode 100644 punisher_data/logs/klippy.log.2025-05-02
+ create mode 100644 punisher_data/logs/klippy.log.2025-05-03
+ create mode 100644 punisher_data/logs/klippy.log.2025-05-04
+ create mode 100644 punisher_data/logs/klippy.log.2025-05-05
+ create mode 100644 punisher_data/logs/klippy.log.2025-05-08
+ create mode 100644 punisher_data/logs/moonraker.log
+ create mode 100644 punisher_data/logs/moonraker.log.2025-05-08
+ create mode 100644 punisher_data/logs/moonraker.log.2025-05-09
+
+To https://github.com/Bradford1040/PUNISHER.git
+   8cc6a4c..67fe55a  devel-punisher -> devel-punisher
+
+branch 'devel-punisher' set up to track 'origin/devel-punisher'.
+
+Command {update_git_script} finished
+
