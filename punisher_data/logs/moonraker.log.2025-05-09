@@ -1,0 +1,284 @@
+-------------------- Log Start | Fri May  9 06:09:59 2025 --------------------
+platform: Linux-6.14.4-061404-generic-x86_64-with-glibc2.41
+data_path: /home/octo/punisher_data
+is_default_data_path: False
+config_file: /home/octo/punisher_data/config/moonraker.conf
+backup_config: /home/octo/punisher_data/config/.moonraker.conf.bkp
+startup_warnings: []
+verbose: False
+debug: False
+asyncio_debug: False
+is_backup_config: False
+is_python_package: False
+instance_uuid: 9dcc6c0e41664e1eba2a9b2fab5413d4
+unix_socket_path: /home/octo/punisher_data/comms/moonraker.sock
+structured_logging: False
+software_version: v0.9.3-74-g1c12414
+git_branch: master
+git_remote: origin
+git_repo_url: https://github.com/Arksine/moonraker.git
+modified_files: []
+unofficial_components: []
+log_file: /home/octo/punisher_data/logs/moonraker.log
+python_version: 3.13.3 (main, Apr  8 2025, 19:55:40) [GCC 14.2.0]
+launch_args: /home/octo/moonraker-env/bin/python /home/octo/moonraker/moonraker/moonraker.py -d /home/octo/punisher_data
+msgspec_enabled: False
+uvloop_enabled: False
+
+#################### Moonraker Configuration ####################
+
+[server]
+host = 0.0.0.0
+port = 7132
+ssl_port = 7144
+klippy_uds_address = /home/octo/punisher_data/comms/klippy.sock
+
+[authorization]
+trusted_clients = 
+	10.0.0.190
+	10.0.0.138
+	FE80::/10
+	::1/128
+	10.0.0.0/16
+cors_domains = 
+	*//rhino*
+	*//*.server.internal
+	*//rhino.server.internal:*
+	*//rhino.server.internal
+	*//10.0.0.138
+	*//10.0.0.138:*
+enable_api_key = True
+default_source = moonraker
+
+[announcements]
+subscriptions = 
+	mainsail
+
+[machine]
+provider = systemd_dbus
+shutdown_action = poweroff
+sudo_password = 0413
+validate_service = True
+validate_config = True
+
+[octoprint_compat]
+
+[history]
+
+[file_manager]
+enable_object_processing = True
+queue_gcode_uploads = True
+file_system_observer = inotify
+enable_observer_warnings = True
+enable_config_write_access = True
+
+[spoolman]
+server = http://rhino:7912
+sync_rate = 5
+
+[update_manager]
+channel = dev
+refresh_interval = 36
+enable_system_updates = False
+enable_auto_refresh = True
+
+[update_manager mainsail]
+type = web
+channel = stable
+repo = mainsail-crew/mainsail
+path = ~/mainsail
+
+[update_manager Klipper-Adaptive-Meshing-Purging]
+type = git_repo
+channel = dev
+path = ~/Klipper-Adaptive-Meshing-Purging
+origin = https://github.com/Bradford1040/Klipper-Adaptive-Meshing-Purging.git
+managed_services = klipper
+primary_branch = main
+
+[update_manager klipper-backup]
+type = git_repo
+path = ~/punisher_data/klipper-backup
+origin = https://github.com/Bradford1040/klipper-backup.git
+managed_services = moonraker
+primary_branch = devel-v3.0
+
+[update_manager Spoolman]
+type = zip
+channel = stable
+repo = Donkie/Spoolman
+path = /home/octo/Spoolman
+virtualenv = .venv
+requirements = requirements.txt
+persistent_files = 
+	.venv
+	.env
+managed_services = Spoolman
+
+[update_manager Klippain-ShakeTune]
+type = git_repo
+origin = https://github.com/Bradford1040/kiauh-klippain-shaketune.git
+path = ~/klippain_shaketune
+virtualenv = ~/klippy-env
+requirements = requirements.txt
+system_dependencies = system-dependencies.json
+primary_branch = punisher
+managed_services = klipper moonraker
+
+[update_manager klipper_tmc_autotune]
+type = git_repo
+channel = dev
+path = ~/klipper_tmc_autotune
+origin = https://github.com/Bradford1040/klipper_tmc_autotune.git
+managed_services = klipper
+primary_branch = master
+install_script = install.sh
+
+#################################################################
+All Configuration Files:
+/home/octo/punisher_data/config/moonraker.conf
+/home/octo/punisher_data/config/secrets.conf
+#################################################################
+Loading Sqlite database provider. Sqlite Version: 3.46.1
+Unsafe Shutdown Count: 5
+
+System Info:
+
+***python***
+  version: (3, 13, 3, 'final', 0)
+  version_string: 3.13.3 (main, Apr  8 2025, 19:55:40) [GCC 14.2.0]
+
+***cpu_info***
+  cpu_count: 8
+  bits: 64bit
+  processor: x86_64
+  cpu_desc: Intel(R) Core(TM) i7-7820HK CPU @ 2.90GHz
+  serial_number: 
+  hardware_desc: 
+  model: 
+  total_memory: 16327400
+  memory_units: kB
+
+***sd_info***
+
+***distribution***
+  name: Rhino Linux 2025.2 (mainline)
+  id: ubuntu
+  version: 2025.2
+  version_parts: {'major': '2025', 'minor': '2', 'build_number': ''}
+  like: debian
+  codename: devel
+  release_info: {}
+  kernel_version: 6.14.4-061404-generic
+
+***virtualization***
+  virt_type: none
+  virt_identifier: none
+
+***network***
+
+***canbus***
+
+***Allowed Services***
+  klipper_mcu
+  webcamd
+  MoonCord
+  KlipperScreen
+  moonraker-telegram-bot
+  moonraker-obico
+  sonar
+  crowsnest
+  octoeverywhere
+  ratos-configurator
+  Spoolman
+  klipper-backup
+Module libcamera unavailable, import failed
+
+Systemd unit moonraker-punisher.service:
+unit_name: moonraker-punisher.service
+is_default: False
+manager: systemd
+Properties:
+**Requires=['home.mount', '-.mount', 'sysinit.target', 'network-online.target', 'system.slice']
+**After=['basic.target', 'sysinit.target', 'home.mount', 'network-online.target', 'system.slice', '-.mount', 'systemd-journald.socket']
+**SupplementaryGroups=['moonraker-admin']
+**EnvironmentFiles=/home/octo/punisher_data/systemd/moonraker.env
+**ExecStart=/home/octo/moonraker-env/bin/python $MOONRAKER_ARGS
+**WorkingDirectory=/home/octo/moonraker
+**FragmentPath=/etc/systemd/system/moonraker-punisher.service
+**Description=API Server for Klipper SV1 punisher
+**User=octo
+
+Systemd unit klipper-punisher.service:
+unit_name: klipper-punisher.service
+is_default: False
+manager: systemd
+Properties:
+**Requires=['system.slice', '-.mount', 'sysinit.target', 'home.mount']
+**After=['-.mount', 'home.mount', 'basic.target', 'sysinit.target', 'system.slice', 'systemd-journald.socket', 'network-online.target']
+**SupplementaryGroups=[]
+**EnvironmentFiles=/home/octo/punisher_data/systemd/klipper.env
+**ExecStart=/home/octo/klippy-env/bin/python $KLIPPER_ARGS
+**WorkingDirectory=/home/octo/klipper
+**FragmentPath=/etc/systemd/system/klipper-punisher.service
+**Description=Klipper 3D Printer Firmware SV1
+**User=octo
+Multiple instances of Moonraker have the update manager enabled.
+moonraker-pascale:b994aea97c7a4c0f92ada68092db6f56:1572
+moonraker-able:cca50902716f4e06920fbddaeaff39ab:1566
+moonraker-phenoix:3f1d3310bc824d0eaef1d8c35ed8fb8c:1573
+moonraker-murphy:bb2e0d0e7ef945368e1a06b160782450:1570
+moonraker-bastard:07846642785b482e8652cf586e89e670:1567
+moonraker-kane:bc035524ff81449db200b4bcf842a876:1569
+moonraker-ben10:7f0ca56182064c6f8821005c8f278fc1:28101
+moonraker-punisher:9dcc6c0e41664e1eba2a9b2fab5413d4:38103
+Connected to Spoolman Spool Manager
+Git Repo moonraker: No warnings detected
+Git Repo klipper: Warnings detected:
+  Unofficial remote url: https://github.com/KalicoCrew/kalico
+  Repo not on offical remote/branch, expected: origin/master, detected: origin/bleeding-edge-v2
+  Repo has untracked source files: ['klippy/extras/autotune_tmc.py', 'klippy/extras/motor_constants.py']
+Git Repo Klipper-Adaptive-Meshing-Purging: No warnings detected
+Git Repo klipper-backup: No warnings detected
+Git Repo Klippain-ShakeTune: No warnings detected
+Git Repo klipper_tmc_autotune: No warnings detected
+Klipper Version: v0.12.0-696-g9eac41f9
+2025-05-09 02:09:59,575 [websockets.py:on_close()] - Websocket Closed: ID: 139686367767248 Close Code: 1001, Close Reason: None, Pong Time Elapsed: 9.62
+2025-05-09 07:14:12,610 [machine.py:_find_public_ip()] - Detected Local IP: 10.0.0.138
+2025-05-09 11:44:54,764 [authorization.py:_check_trusted_connection()] - Trusted Connection Detected, IP: 10.0.0.190
+2025-05-09 11:44:54,765 [application.py:log_request()] - 101 GET /websocket (10.0.0.190) [_TRUSTED_USER_] 1.37ms
+2025-05-09 11:44:54,765 [websockets.py:open()] - Websocket Opened: ID: 139686367764368, Proxied: False, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36, Host Name: rhino
+2025-05-09 11:44:55,264 [file_manager.py:get_file_list()] - Updating File List <config>...
+2025-05-09 12:47:54,603 [authorization.py:_prune_conn_handler()] - Trusted Connection Expired, IP: 10.0.0.190
+2025-05-09 15:27:15,968 [websockets.py:on_close()] - Websocket Closed: ID: 139686367764368 Close Code: 1001, Close Reason: None, Pong Time Elapsed: 1.20
+2025-05-09 15:27:30,815 [authorization.py:_check_trusted_connection()] - Trusted Connection Detected, IP: 10.0.0.190
+2025-05-09 15:27:30,816 [application.py:log_request()] - 101 GET /websocket (10.0.0.190) [_TRUSTED_USER_] 3.61ms
+2025-05-09 15:27:30,816 [websockets.py:open()] - Websocket Opened: ID: 139686367757968, Proxied: False, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36, Host Name: rhino
+2025-05-09 15:27:31,042 [file_manager.py:get_file_list()] - Updating File List <config>...
+2025-05-09 15:27:31,600 [application.py:log_request()] - 101 GET /websocket (10.0.0.190) [_TRUSTED_USER_] 0.43ms
+2025-05-09 15:27:31,600 [websockets.py:open()] - Websocket Opened: ID: 139686367765008, Proxied: False, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36, Host Name: rhino
+2025-05-09 15:27:31,645 [application.py:log_request()] - 101 GET /websocket (10.0.0.190) [_TRUSTED_USER_] 0.52ms
+2025-05-09 15:27:31,645 [websockets.py:open()] - Websocket Opened: ID: 139686367764688, Proxied: False, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36, Host Name: rhino
+2025-05-09 15:27:31,680 [application.py:log_request()] - 101 GET /websocket (10.0.0.190) [_TRUSTED_USER_] 0.39ms
+2025-05-09 15:27:31,680 [websockets.py:open()] - Websocket Opened: ID: 139686367765968, Proxied: False, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36, Host Name: rhino
+2025-05-09 15:27:32,263 [file_manager.py:get_file_list()] - Updating File List <config>...
+2025-05-09 15:27:32,330 [file_manager.py:get_file_list()] - Updating File List <config>...
+2025-05-09 15:27:32,353 [file_manager.py:get_file_list()] - Updating File List <config>...
+2025-05-09 15:27:52,340 [application.py:log_request()] - 101 GET /websocket (10.0.0.190) [_TRUSTED_USER_] 1.08ms
+2025-05-09 15:27:52,341 [websockets.py:open()] - Websocket Opened: ID: 139686367766928, Proxied: False, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36, Host Name: rhino
+2025-05-09 15:27:52,606 [file_manager.py:get_file_list()] - Updating File List <config>...
+2025-05-09 15:27:54,218 [websockets.py:on_close()] - Websocket Closed: ID: 139686367764688 Close Code: 1001, Close Reason: None, Pong Time Elapsed: 2.57
+2025-05-09 15:27:54,232 [websockets.py:on_close()] - Websocket Closed: ID: 139686367757968 Close Code: 1001, Close Reason: None, Pong Time Elapsed: 3.41
+2025-05-09 15:27:54,239 [websockets.py:on_close()] - Websocket Closed: ID: 139686367765968 Close Code: 1001, Close Reason: None, Pong Time Elapsed: 2.56
+2025-05-09 15:27:54,254 [websockets.py:on_close()] - Websocket Closed: ID: 139686367765008 Close Code: 1001, Close Reason: None, Pong Time Elapsed: 2.65
+2025-05-09 15:27:57,033 [application.py:log_request()] - 101 GET /websocket (10.0.0.190) [_TRUSTED_USER_] 0.45ms
+2025-05-09 15:27:57,033 [websockets.py:open()] - Websocket Opened: ID: 139686367768528, Proxied: False, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36, Host Name: rhino
+2025-05-09 15:27:57,054 [application.py:log_request()] - 101 GET /websocket (10.0.0.190) [_TRUSTED_USER_] 0.63ms
+2025-05-09 15:27:57,054 [websockets.py:open()] - Websocket Opened: ID: 139686367764368, Proxied: False, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36, Host Name: rhino
+2025-05-09 15:27:57,303 [file_manager.py:get_file_list()] - Updating File List <config>...
+2025-05-09 15:27:57,317 [file_manager.py:get_file_list()] - Updating File List <config>...
+2025-05-09 16:32:54,639 [authorization.py:_prune_conn_handler()] - Trusted Connection Expired, IP: 10.0.0.190
+2025-05-09 23:54:22,890 [authorization.py:_check_trusted_connection()] - Trusted Connection Detected, IP: 10.0.0.190
+2025-05-09 23:54:22,890 [application.py:log_request()] - 101 GET /websocket (10.0.0.190) [_TRUSTED_USER_] 1.26ms
+2025-05-09 23:54:22,891 [websockets.py:open()] - Websocket Opened: ID: 139686377545616, Proxied: False, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36, Host Name: rhino
+2025-05-09 23:54:22,897 [websockets.py:_handle_identify()] - Websocket 139686377545616 Client Identified - Name: mainsail, Version: 2.14.0, Type: web
