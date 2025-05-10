@@ -875,3 +875,22 @@ Content-Type:
 Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryTv4ml6yKCH3cFJBq
 2025-05-10 17:44:34,810 [application.py:post()] - Processing Uploaded File: shell_command.cfg
 2025-05-10 17:44:34,817 [application.py:log_request()] - 201 POST /server/files/upload (10.0.0.190) [_TRUSTED_USER_] 16.24ms
+2025-05-10 17:49:40,622 [application.py:prepare()] - Upload Request Received from 10.0.0.190
+Content-Type: 
+2025-05-10 17:49:40,634 [application.py:prepare()] - Upload Request Received from 10.0.0.190
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryMPQf9OFuOpiMEfN8
+2025-05-10 17:49:40,643 [application.py:post()] - Processing Uploaded File: macros.cfg
+2025-05-10 17:49:40,651 [application.py:log_request()] - 201 POST /server/files/upload (10.0.0.190) [_TRUSTED_USER_] 17.89ms
+2025-05-10 17:49:41,792 [klippy_connection.py:_on_connection_closed()] - Klippy Connection Removed
+2025-05-10 17:49:43,047 [klippy_connection.py:_do_connect()] - Klippy Connection Established
+2025-05-10 17:49:43,055 [machine.py:extract_service_info()] - Detected alternate unit name for klipper: klipper-punisher.service
+2025-05-10 17:49:45,848 [websockets.py:on_close()] - Websocket Closed: ID: 132248083758800 Close Code: None, Close Reason: None, Pong Time Elapsed: 5.95
+2025-05-10 17:49:45,865 [klippy_connection.py:_request_initial_subscriptions()] - Webhooks Subscribed
+2025-05-10 17:49:45,866 [klippy_connection.py:_request_initial_subscriptions()] - GCode Output Subscribed
+2025-05-10 17:49:45,879 [application.py:log_request()] - 101 GET /websocket (10.0.0.190) [_TRUSTED_USER_] 1.39ms
+2025-05-10 17:49:45,880 [websockets.py:open()] - Websocket Opened: ID: 132248005379408, Proxied: False, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36, Host Name: rhino
+2025-05-10 17:49:45,895 [file_manager.py:get_file_list()] - Updating File List <config>...
+2025-05-10 17:49:46,115 [job_state.py:_handle_started()] - Job state initialized: standby
+2025-05-10 17:49:46,388 [klippy_connection.py:_check_ready()] - Klippy ready
+2025-05-10 17:49:46,394 [file_manager.py:get_file_list()] - Updating File List <config>...
+2025-05-10 17:49:47,630 [data_store.py:_init_sensors()] - Configuring available sensors: ['temperature_sensor mcu_temp', 'temperature_sensor accel_temp', 'temperature_sensor rhino_linux', 'temperature_sensor btt_eddy_mcu', 'heater_bed', 'z_thermal_adjust', 'extruder']
