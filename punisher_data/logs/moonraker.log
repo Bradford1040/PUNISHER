@@ -894,3 +894,24 @@ Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryMPQf9OFuOpiMEf
 2025-05-10 17:49:46,388 [klippy_connection.py:_check_ready()] - Klippy ready
 2025-05-10 17:49:46,394 [file_manager.py:get_file_list()] - Updating File List <config>...
 2025-05-10 17:49:47,630 [data_store.py:_init_sensors()] - Configuring available sensors: ['temperature_sensor mcu_temp', 'temperature_sensor accel_temp', 'temperature_sensor rhino_linux', 'temperature_sensor btt_eddy_mcu', 'heater_bed', 'z_thermal_adjust', 'extruder']
+2025-05-10 18:50:08,111 [authorization.py:_prune_conn_handler()] - Trusted Connection Expired, IP: 10.0.0.190
+2025-05-10 19:19:49,446 [websockets.py:on_close()] - Websocket Closed: ID: 132248005386128 Close Code: None, Close Reason: None, Pong Time Elapsed: 9.46
+2025-05-10 19:19:49,498 [websockets.py:on_close()] - Websocket Closed: ID: 132248005379408 Close Code: None, Close Reason: None, Pong Time Elapsed: 3.61
+2025-05-10 19:19:49,537 [authorization.py:_check_trusted_connection()] - Trusted Connection Detected, IP: 10.0.0.190
+2025-05-10 19:19:49,537 [application.py:log_request()] - 101 GET /websocket (10.0.0.190) [_TRUSTED_USER_] 1.41ms
+2025-05-10 19:19:49,538 [websockets.py:open()] - Websocket Opened: ID: 132248083758480, Proxied: False, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36, Host Name: rhino
+2025-05-10 19:19:49,556 [file_manager.py:get_file_list()] - Updating File List <config>...
+2025-05-10 19:34:22,095 [application.py:log_request()] - 101 GET /websocket (10.0.0.190) [_TRUSTED_USER_] 1.25ms
+2025-05-10 19:34:22,096 [websockets.py:open()] - Websocket Opened: ID: 132248005387088, Proxied: False, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36, Host Name: rhino
+2025-05-10 19:34:22,231 [file_manager.py:get_file_list()] - Updating File List <config>...
+2025-05-10 19:34:23,649 [application.py:log_request()] - 101 GET /websocket (10.0.0.190) [_TRUSTED_USER_] 1.08ms
+2025-05-10 19:34:23,650 [websockets.py:open()] - Websocket Opened: ID: 132248005388368, Proxied: False, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36, Host Name: rhino
+2025-05-10 19:34:23,656 [websockets.py:_handle_identify()] - Websocket 132248005388368 Client Identified - Name: mainsail, Version: 2.14.0, Type: web
+2025-05-10 19:35:27,379 [websockets.py:on_close()] - Websocket Closed: ID: 132248083758480 Close Code: None, Close Reason: None, Pong Time Elapsed: 7.83
+2025-05-10 19:35:27,430 [application.py:log_request()] - 101 GET /websocket (10.0.0.190) [_TRUSTED_USER_] 1.13ms
+2025-05-10 19:35:27,430 [websockets.py:open()] - Websocket Opened: ID: 132248083745040, Proxied: False, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36, Host Name: rhino
+2025-05-10 19:35:27,450 [file_manager.py:get_file_list()] - Updating File List <config>...
+2025-05-10 19:35:30,575 [websockets.py:on_close()] - Websocket Closed: ID: 132248083745040 Close Code: None, Close Reason: None, Pong Time Elapsed: 3.15
+2025-05-10 19:35:30,612 [application.py:log_request()] - 101 GET /websocket (10.0.0.190) [_TRUSTED_USER_] 0.69ms
+2025-05-10 19:35:30,612 [websockets.py:open()] - Websocket Opened: ID: 132248083758480, Proxied: False, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36, Host Name: rhino
+2025-05-10 19:35:30,636 [file_manager.py:get_file_list()] - Updating File List <config>...
