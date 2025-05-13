@@ -9,4 +9,4 @@ printer-[0-9]*_[0-9]*.cfg
 *.zip
 *.conf.bkp
 *.bak
-secrects.conf
+secrets.conf
