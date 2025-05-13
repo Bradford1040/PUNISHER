@@ -1,0 +1,11 @@
+# Auto-generated .gitignore for Klipper Backup repository
+# These patterns are also used by rsync to exclude files from being copied.
+
+*.swp
+*.tmp
+printer-[0-9]*_[0-9]*.cfg
+*.bkp
+*.csv
+*.zip
+*.conf.bkp
+*.bak
