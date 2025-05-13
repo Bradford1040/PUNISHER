@@ -1,0 +1,107 @@
+[server]
+host = 0.0.0.0
+port = 7132
+ssl_port = 7144
+klippy_uds_address = /home/octo/punisher_data/comms/klippy.sock
+
+[authorization]
+trusted_clients = 
+	10.0.0.190
+	10.0.0.138
+	FE80::/10
+	::1/128
+	10.0.0.0/16
+cors_domains = 
+	*//rhino*
+	*//*.server.internal
+	*//rhino.server.internal:*
+	*//rhino.server.internal
+	*//10.0.0.138
+	*//10.0.0.138:*
+enable_api_key = True
+default_source = moonraker
+
+[announcements]
+subscriptions = 
+	mainsail
+
+[machine]
+provider = systemd_dbus
+shutdown_action = poweroff
+sudo_password = 0413
+validate_service = True
+validate_config = True
+
+[octoprint_compat]
+
+[history]
+
+[file_manager]
+enable_object_processing = True
+queue_gcode_uploads = True
+file_system_observer = inotify
+enable_observer_warnings = True
+enable_config_write_access = True
+
+[spoolman]
+server = http://rhino:7912
+sync_rate = 5
+
+[update_manager]
+channel = dev
+refresh_interval = 36
+enable_system_updates = False
+enable_auto_refresh = True
+
+[update_manager mainsail]
+type = web
+channel = stable
+repo = mainsail-crew/mainsail
+path = ~/mainsail
+
+[update_manager Klipper-Adaptive-Meshing-Purging]
+type = git_repo
+channel = dev
+path = ~/Klipper-Adaptive-Meshing-Purging
+origin = https://github.com/Bradford1040/Klipper-Adaptive-Meshing-Purging.git
+managed_services = klipper
+primary_branch = main
+
+[update_manager klipper-backup]
+type = git_repo
+path = ~/punisher_data/klipper-backup
+origin = https://github.com/Bradford1040/klipper-backup.git
+managed_services = moonraker
+primary_branch = devel-v3.0
+
+[update_manager Spoolman]
+type = zip
+channel = stable
+repo = Donkie/Spoolman
+path = /home/octo/Spoolman
+virtualenv = .venv
+requirements = requirements.txt
+persistent_files = 
+	.venv
+	.env
+managed_services = Spoolman
+
+[update_manager Klippain-ShakeTune]
+type = git_repo
+origin = https://github.com/Bradford1040/kiauh-klippain-shaketune.git
+path = ~/klippain_shaketune
+virtualenv = ~/klippy-env
+requirements = requirements.txt
+system_dependencies = system-dependencies.json
+primary_branch = punisher
+managed_services = klipper moonraker
+
+[update_manager klipper_tmc_autotune]
+type = git_repo
+channel = dev
+path = ~/klipper_tmc_autotune
+origin = https://github.com/Bradford1040/klipper_tmc_autotune.git
+managed_services = klipper
+primary_branch = master
+install_script = install.sh
+
